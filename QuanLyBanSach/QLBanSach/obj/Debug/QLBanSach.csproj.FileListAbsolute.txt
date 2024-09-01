@@ -1,0 +1,43 @@
+C:\Users\phong\C#\OntapGk\QLBanSach\QLBanSach\bin\Debug\QLBanSach.exe.config
+C:\Users\phong\C#\OntapGk\QLBanSach\QLBanSach\bin\Debug\QLBanSach.exe
+C:\Users\phong\C#\OntapGk\QLBanSach\QLBanSach\bin\Debug\QLBanSach.pdb
+C:\Users\phong\C#\OntapGk\QLBanSach\QLBanSach\obj\Debug\QLBanSach.csproj.AssemblyReference.cache
+C:\Users\phong\C#\OntapGk\QLBanSach\QLBanSach\obj\Debug\QLBanSach.csproj.SuggestedBindingRedirects.cache
+C:\Users\phong\C#\OntapGk\QLBanSach\QLBanSach\obj\Debug\QLBanSach.Form1.resources
+C:\Users\phong\C#\OntapGk\QLBanSach\QLBanSach\obj\Debug\QLBanSach.Properties.Resources.resources
+C:\Users\phong\C#\OntapGk\QLBanSach\QLBanSach\obj\Debug\QLBanSach.csproj.GenerateResource.cache
+C:\Users\phong\C#\OntapGk\QLBanSach\QLBanSach\obj\Debug\QLBanSach.csproj.CoreCompileInputs.cache
+C:\Users\phong\C#\OntapGk\QLBanSach\QLBanSach\obj\Debug\QLBanSach.exe
+C:\Users\phong\C#\OntapGk\QLBanSach\QLBanSach\obj\Debug\QLBanSach.pdb
+C:\Users\Admin\Desktop\LeHongPhong_2151264675\LeHongPhong_2151264675\QLBanSach\bin\Debug\QLBanSach.exe.config
+C:\Users\Admin\Desktop\LeHongPhong_2151264675\LeHongPhong_2151264675\QLBanSach\bin\Debug\QLBanSach.exe
+C:\Users\Admin\Desktop\LeHongPhong_2151264675\LeHongPhong_2151264675\QLBanSach\bin\Debug\QLBanSach.pdb
+C:\Users\Admin\Desktop\LeHongPhong_2151264675\LeHongPhong_2151264675\QLBanSach\obj\Debug\QLBanSach.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\LeHongPhong_2151264675\LeHongPhong_2151264675\QLBanSach\obj\Debug\QLBanSach.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Desktop\LeHongPhong_2151264675\LeHongPhong_2151264675\QLBanSach\obj\Debug\QLBanSach.Form1.resources
+C:\Users\Admin\Desktop\LeHongPhong_2151264675\LeHongPhong_2151264675\QLBanSach\obj\Debug\QLBanSach.Properties.Resources.resources
+C:\Users\Admin\Desktop\LeHongPhong_2151264675\LeHongPhong_2151264675\QLBanSach\obj\Debug\QLBanSach.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\LeHongPhong_2151264675\LeHongPhong_2151264675\QLBanSach\obj\Debug\QLBanSach.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\LeHongPhong_2151264675\LeHongPhong_2151264675\QLBanSach\obj\Debug\QLBanSach.exe
+C:\Users\Admin\Desktop\LeHongPhong_2151264675\LeHongPhong_2151264675\QLBanSach\obj\Debug\QLBanSach.pdb
+D:\drive\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\bin\Debug\QLBanSach.exe.config
+D:\drive\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\bin\Debug\QLBanSach.exe
+D:\drive\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\bin\Debug\QLBanSach.pdb
+D:\drive\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\obj\Debug\QLBanSach.csproj.AssemblyReference.cache
+D:\drive\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\obj\Debug\QLBanSach.csproj.SuggestedBindingRedirects.cache
+D:\drive\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\obj\Debug\QLBanSach.Form1.resources
+D:\drive\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\obj\Debug\QLBanSach.Properties.Resources.resources
+D:\drive\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\obj\Debug\QLBanSach.csproj.GenerateResource.cache
+D:\drive\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\obj\Debug\QLBanSach.csproj.CoreCompileInputs.cache
+D:\drive\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\obj\Debug\QLBanSach.exe
+D:\drive\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\obj\Debug\QLBanSach.pdb
+E:\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\bin\Debug\QLBanSach.exe.config
+E:\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\bin\Debug\QLBanSach.exe
+E:\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\bin\Debug\QLBanSach.pdb
+E:\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\obj\Debug\QLBanSach.csproj.AssemblyReference.cache
+E:\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\obj\Debug\QLBanSach.Form1.resources
+E:\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\obj\Debug\QLBanSach.Properties.Resources.resources
+E:\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\obj\Debug\QLBanSach.csproj.GenerateResource.cache
+E:\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\obj\Debug\QLBanSach.csproj.CoreCompileInputs.cache
+E:\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\obj\Debug\QLBanSach.exe
+E:\các code\code C#\CaoNguyenVu_2151264695\CaoNguyenVu_2151264695\QLBanSach\obj\Debug\QLBanSach.pdb
