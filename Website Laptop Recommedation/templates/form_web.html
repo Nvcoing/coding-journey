@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommend Laptop</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        #background-scene {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-link {
+            margin-right: 20px;
+        }
+
+        .profile-link a {
+            color: #4CAF50;
+            text-decoration: none;
+            padding: 8px 15px;
+            border: 1px solid #4CAF50;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .profile-link a:hover {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .menu-dots {
+            position: fixed;
+            top: 80px;
+            left: 20px;
+            z-index: 1000;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 3px;
+            display: block;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 999;
+            top: 60px;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar.active {
+            width: 400px;
+        }
+
+        .sidebar-content {
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            margin-top: 20px;
+        }
+
+        .sidebar.active .sidebar-content {
+            opacity: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: white;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        select option {
+            background-color: black;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            cursor: pointer;
+            font-size: 24px;
+            background: none;
+            border: none;
+        }
+
+        .info-overlay {
+            position: fixed;
+            z-index: 2;
+            padding: 20px;
+            color: white;
+            font-size: 1.1em;
+            line-height: 1.6;
+            width: 100%;
+            box-sizing: border-box;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            top: 60px;
+        }
+
+        .feature-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            width: 280px;
+            margin: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .info-card h3 {
+            color: #fff;
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 5px;
+        }
+
+        .info-card ul {
+            margin: 0;
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        .info-card li {
+            margin: 5px 0;
+            font-size: 0.9em;
+            position: relative;
+        }
+
+        .info-card li:before {
+            content: "•";
+            position: absolute;
+            left: -15px;
+            color: #4CAF50;
+        }
+
+        .welcome-text {
+            font-size: 2em;
+            margin: 20px 0 40px 0;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 768px) {
+            .info-card {
+                width: 100%;
+                margin: 5px 0;
+            }
+            
+            .welcome-text {
+                font-size: 1.5em;
+            }
+            
+            .sidebar.active {
+                width: 100%;
+            }
+        }
+    </style>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#projects">Projects</a>
+            <a href="/#about">About</a>
+            <a href="/#contact">Contact</a>
+            <a href="/form">Recommend Laptop</a>
+        </div>
+        <div class="profile-link">
+            <a href="https://github.com/Nvcoing" target="_blank">My Profile</a>
+        </div>
+    </nav>
+
+    <div class="info-overlay">
+        <div class="welcome-text">
+            Laptop Guide
+        </div>
+        <div class="feature-info">
+            <div class="info-card">
+                <h3>Ram</h3>
+                <ul>
+                    <li>8-12GB: Basic tasks (web, office).</li>
+                    <li>16-24GB: Gaming, programming, light graphics.</li>
+                    <li>32-64GB: Heavy tasks (video editing, simulations).</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Storage (GB)</h3>
+                <ul>
+                    <li>256GB: Basic storage (documents, apps).</li>
+                    <li>512GB: Moderate usage (photos, light games).</li>
+                    <li>1024GB: Large files (videos, games).</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Screen Size (inches):</h3>
+                <ul>
+                    <li>13.3"-14.5": Portable, for travel.</li>
+                    <li>15.0"-15.6": Balanced use.</li>
+                    <li>16.0"-18.0": Large, great for gaming/work.</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>GPU Type</h3>
+                <ul>
+                    <li>High-class-graphics-gaming: Best for gaming/3D rendering.</li>
+                    <li>High-class-workstation: Graphic design, simulations.</li>
+                    <li>Mid-range: Casual use (study, light work).</li>
+                    <li>Universal: General tasks.</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>CPU Type</h3>
+                <ul>
+                    <li>Entry-level: Web, office work.</li>
+                    <li>Mid-range: Studying, entertainment.</li>
+                    <li>High-class: Gaming, programming.</li>
+                    <li>Premium: Big data, simulations.</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Quick Tips</h3>
+                <ul>
+                    <li>Select inputs that match your usage needs (e.g., gaming, work, travel).</li>
+                    <li>Higher values often mean better performance but come at a higher price.</li>
+                    <li>For balanced performance, choose mid-range options unless your work requires premium specs.</li>
+                    <li>Ensure selected GPU and CPU are compatible with each other for optimal performance.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <button class="menu-dots" onclick="toggleSidebar()">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </button>
+
+    <div id="sidebar" class="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">×</button>
+        <div class="sidebar-content">
+            <h1>Laptop Price Prediction</h1>
+            <form action="/submit_form" method="post">
+                <div class="form-group">
+                    <label for="ram">RAM (GB)</label>
+                    <select name="ram" id="ram" required>
+                        {% for value in ram_values %}
+                        <option value="{{ value }}">{{ value }} GB</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="memory">Storage (GB)</label>
+                    <select name="memory" id="memory" required>
+                        {% for value in memory_values %}
+                        <option value="{{ value }}">{{ value }} GB</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="size">Screen Size (inches)</label>
+                    <select name="size" id="size" required>
+                        {% for value in size_values %}
+                        <option value="{{ value }}">{{ value }}"</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="gpu_type">GPU Type</label>
+                    <select name="gpu_type" id="gpu_type" required>
+                        {% for value in gpu_values %}
+                        <option value="{{ value }}">{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cpu_type">CPU Type</label>
+                    <select name="cpu_type" id="cpu_type" required>
+                        {% for value in cpu_values %}
+                        <option value="{{ value }}">{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <button type="submit">Predict Price</button>
+            </form>
+        </div>
+    </div>
+
+    <spline-viewer id="background-scene" url="https://prod.spline.design/YpB-yqLMWbXZ1-AI/scene.splinecode"></spline-viewer>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.menu-dots') && 
+                !event.target.closest('.sidebar')) {
+                document.getElementById("sidebar").classList.remove("active");
+            }
+        });
+    </script>
+</body>
+</html>
