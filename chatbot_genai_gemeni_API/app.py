@@ -1,7 +1,17 @@
+import os
 from flask import Flask, request, jsonify, render_template
 import google.generativeai as genai
 import logging
 from flask_cors import CORS  # Enable CORS for frontend-backend communication
+from dotenv import load_dotenv  # Import python-dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Retrieve API_KEY from environment variables
+API_KEY = os.getenv('API_KEY')
+if not API_KEY:
+    raise ValueError("API_KEY environment variable is not set. Please set it in your .env file.")
 
 app = Flask(__name__, template_folder='templates')
 CORS(app)  # Allow cross-origin requests
@@ -9,8 +19,8 @@ CORS(app)  # Allow cross-origin requests
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
 
-# Set your Gemini API key
-genai.configure(api_key="AIzaSyCQ7CXvB16w8UaMpn6xKNbGka2Gu05r9TI")
+# Configure Gemini API using the API_KEY from the environment
+genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 # Predefined answers dictionary with friendly tone and emojis
